@@ -19,16 +19,7 @@ plugins {
 }
 
 fun getProps(propName: String): String {
-    val propsInEnv = System.getenv("LOCAL_PROPERTIES")
-    if (propsInEnv != null) {
-        val props = Properties()
-        props.load(ByteArrayInputStream(Base64.getDecoder().decode(propsInEnv)))
-        val value = props.getProperty(propName)
-        if (value != null) {
-            return value
-        }
-    }
-    val propsFile = rootProject.file("local.properties")
+    val propsFile = rootProject.file("keystore.properties")
     if (propsFile.exists()) {
         val props = Properties()
         props.load(FileInputStream(propsFile))
@@ -57,7 +48,7 @@ android {
     namespace = "io.nekohasekai.sfa"
     compileSdk = 36
 
-    ndkVersion = "28.0.13004108"
+    ndkVersion = System.getenv("NDK_VERSION") ?: "28.0.13004108"
 
     System.getenv("ANDROID_NDK_HOME")?.let { ndkPath = it }
 
@@ -92,6 +83,7 @@ android {
         }
         release {
             isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             signingConfig = signingConfigs.getByName("release")
             vcsInfo.include = false
@@ -133,9 +125,9 @@ android {
     splits {
         abi {
             isEnable = true
-            isUniversalApk = true
+            isUniversalApk = false
             reset()
-            include("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
+            include("armeabi-v7a", "arm64-v8a")
         }
     }
 
