@@ -11,8 +11,7 @@ plugins {
 android {
     namespace "io.nekohasekai.sfa"
     compileSdk 34
-
-    ndkVersion "26.2.11394342"
+    ndkVersion System.getenv("NDK_VERSION")
 
     ksp {
         arg("room.incremental", "true")
@@ -44,6 +43,7 @@ android {
             }
         }
         release {
+            shrinkResources true
             minifyEnabled true
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             signingConfig signingConfigs.release
@@ -62,9 +62,9 @@ android {
     splits {
         abi {
             enable true
-            universalApk true
             reset()
-            include "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+            include "armeabi-v7a", "arm64-v8a"
+            universalApk false
         }
     }
 
@@ -76,6 +76,7 @@ android {
     buildFeatures {
         viewBinding true
         aidl true
+        buildConfig true
     }
 
     applicationVariants.configureEach { variant ->
@@ -122,6 +123,22 @@ dependencies {
     playImplementation "com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0"
 }
 
+if (getProps("APPCENTER_TOKEN") != "") {
+    apply plugin: "com.betomorrow.appcenter"
+    appcenter {
+        apiToken = getProps("APPCENTER_TOKEN")
+        ownerName = getProps("APPCENTER_OWNER")
+        distributionGroups = [getProps("APPCENTER_GROUP")]
+        releaseNotes = getVersionProps("RELEASE_NOTES")
+        notifyTesters = true
+        apps {
+            playRelease {
+                appName = getProps("APPCENTER_APP_NAME")
+            }
+        }
+    }
+}
+
 def playCredentialsJSON = rootProject.file("service-account-credentials.json")
 if (playCredentialsJSON.exists()) {
     play {
@@ -143,7 +160,7 @@ tasks.withType(KotlinCompile.class).configureEach {
 }
 
 def getProps(String propName) {
-    def propsFile = rootProject.file("local.properties")
+    def propsFile = rootProject.file("keystore.properties")
     if (propsFile.exists()) {
         def props = new Properties()
         props.load(new FileInputStream(propsFile))
