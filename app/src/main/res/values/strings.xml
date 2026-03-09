@@ -196,7 +196,6 @@
     <string name="core_data_size">Data Size</string>
     <string name="about">About</string>
     <string name="source_code">Source Code</string>
-    <string name="sponsor">Sponsor</string>
     <string name="working_directory">Working Directory</string>
     <string name="beta_settings">Beta Settings</string>
     <string name="disable_deprecated_warnings">Disable Deprecated Warnings</string>
@@ -258,8 +257,8 @@
     <string name="background_permission_description">Apply for the necessary permissions in order for the VPN to function properly.\n\nIf you are using a device made by a Chinese company, the card may not disappear after the permission is granted.</string>
     <string name="request_background_permission">Ignore</string>
     <string name="location_permission_title">Location permission</string>
-    <string name="location_permission_description">Your profile contains &lt;strong&gt;&lt;tt&gt;wifi_ssid&lt;/tt&gt; or &lt;tt&gt;wifi_bssid&lt;/tt&gt; routing rules&lt;/strong&gt;. To make them work, sing-box uses the &lt;strong&gt;location&lt;/strong&gt; permission &lt;strong&gt;in the background&lt;/strong&gt; to get information about the connected Wi-Fi network. The information will be used &lt;strong&gt;for routing purposes only&lt;/strong&gt;.</string>
-    <string name="location_permission_background_description">On Android 10 and up, &lt;strong&gt;background location&lt;/strong&gt; permission is required. Select &lt;strong&gt;Allow all the time&lt;/strong&gt; to grant the permission.</string>
+    <string name="location_permission_description">Your profile contains <strong><tt>wifi_ssid</tt> or <tt>wifi_bssid</tt> routing rules</strong>. To make them work, sing-box uses the <strong>location</strong> permission <strong>in the background</strong> to get information about the connected Wi-Fi network. The information will be used <strong>for routing purposes only</strong>.</string>
+    <string name="location_permission_background_description">On Android 10 and up, <strong>background location</strong> permission is required. Select <strong>Allow all the time</strong> to grant the permission.</string>
     <string name="notification_permission_title">Notification permission</string>
     <string name="notification_permission_required_description">sing-box is unable to show real-time network speeds without the permission to send notifications. Please grant the permission or disable real-time network speeds notification before starting the service.</string>
     <string name="root_access_required">Root access required</string>

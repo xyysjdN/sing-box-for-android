@@ -196,7 +196,6 @@
     <string name="core_data_size">اندازه داده</string>
     <string name="about">درباره</string>
     <string name="source_code">کد منبع</string>
-    <string name="sponsor">حامی مالی</string>
     <string name="working_directory">پوشه کاری</string>
     <string name="beta_settings">تنظیمات بتا</string>
     <string name="disable_deprecated_warnings">غیرفعال‌کردن هشدارهای منسوخ</string>
@@ -256,8 +255,8 @@
     <string name="background_permission_description">برای کارکرد صحیح VPN، مجوزهای لازم را اعطا کنید.\n\nاگر از دستگاهی ساخت شرکت‌های چینی استفاده می‌کنید، ممکن است این کارت بعد از اعطای مجوز ناپدید نشود.</string>
     <string name="request_background_permission">نادیده گرفتن</string>
     <string name="location_permission_title">مجوز موقعیت مکانی</string>
-    <string name="location_permission_description">پروفایل شما شامل قوانین مسیریابی &lt;strong&gt;&lt;tt&gt;wifi_ssid&lt;/tt&gt; یا &lt;tt&gt;wifi_bssid&lt;/tt&gt;&lt;/strong&gt; است. برای کارکرد آن‌ها، sing-box از مجوز &lt;strong&gt;موقعیت مکانی&lt;/strong&gt; &lt;strong&gt;در پس‌زمینه&lt;/strong&gt; برای دریافت اطلاعات شبکه Wi-Fi متصل استفاده می‌کند. این اطلاعات &lt;strong&gt;فقط برای مسیریابی&lt;/strong&gt; استفاده می‌شوند.</string>
-    <string name="location_permission_background_description">در Android 10 و بالاتر، مجوز &lt;strong&gt;موقعیت مکانی پس‌زمینه&lt;/strong&gt; لازم است. برای اعطای مجوز، گزینه &lt;strong&gt;اجازه دائمی&lt;/strong&gt; را انتخاب کنید.</string>
+    <string name="location_permission_description">پروفایل شما شامل قوانین مسیریابی <strong><tt>wifi_ssid</tt> یا <tt>wifi_bssid</tt></strong> است. برای کارکرد آن‌ها، sing-box از مجوز <strong>موقعیت مکانی</strong> <strong>در پس‌زمینه</strong> برای دریافت اطلاعات شبکه Wi-Fi متصل استفاده می‌کند. این اطلاعات <strong>فقط برای مسیریابی</strong> استفاده می‌شوند.</string>
+    <string name="location_permission_background_description">در Android 10 و بالاتر، مجوز <strong>موقعیت مکانی پس‌زمینه</strong> لازم است. برای اعطای مجوز، گزینه <strong>اجازه دائمی</strong> را انتخاب کنید.</string>
     <string name="notification_permission_title">مجوز اعلان</string>
     <string name="notification_permission_required_description">بدون مجوز اعلان، sing-box نمی‌تواند سرعت لحظه‌ای شبکه را نمایش دهد. لطفا پیش از شروع سرویس، مجوز را بدهید یا اعلان سرعت لحظه‌ای شبکه را غیرفعال کنید.</string>
     <string name="root_access_required">دسترسی Root لازم است</string>
